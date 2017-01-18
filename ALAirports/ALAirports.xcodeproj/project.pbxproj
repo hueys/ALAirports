@@ -1,0 +1,400 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		AA3238CD1D35393C00747F73 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = AA3238CC1D35393C00747F73 /* main.m */; };
+		AA3238D01D35393C00747F73 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = AA3238CF1D35393C00747F73 /* AppDelegate.m */; };
+		AA3238D61D35393C00747F73 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AA3238D41D35393C00747F73 /* Main.storyboard */; };
+		AA3238D81D35393C00747F73 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AA3238D71D35393C00747F73 /* Assets.xcassets */; };
+		AA3238DB1D35393C00747F73 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AA3238D91D35393C00747F73 /* LaunchScreen.storyboard */; };
+		AA84EFE11D3540C900F6D8AC /* Airport.m in Sources */ = {isa = PBXBuildFile; fileRef = AA84EFE01D3540C900F6D8AC /* Airport.m */; };
+		AA84EFE81D354F4300F6D8AC /* AirportDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AA84EFE71D354F4300F6D8AC /* AirportDetailViewController.m */; };
+		AA84EFEB1D354F6C00F6D8AC /* AirportsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AA84EFEA1D354F6C00F6D8AC /* AirportsViewController.m */; };
+		AA84EFEE1D35504B00F6D8AC /* AirportController.m in Sources */ = {isa = PBXBuildFile; fileRef = AA84EFED1D35504B00F6D8AC /* AirportController.m */; };
+		AA84EFF01D35531700F6D8AC /* airports.csv in Resources */ = {isa = PBXBuildFile; fileRef = AA84EFEF1D35531700F6D8AC /* airports.csv */; };
+		AA945AB71D356652009FD43A /* AirportTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = AA945AB61D356652009FD43A /* AirportTableViewCell.m */; };
+		AAFFBAE91E2FC755003CF8D8 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AAFFBAE81E2FC755003CF8D8 /* MapKit.framework */; };
+		AAFFBAEC1E2FC842003CF8D8 /* AirportAnnotation.m in Sources */ = {isa = PBXBuildFile; fileRef = AAFFBAEB1E2FC842003CF8D8 /* AirportAnnotation.m */; };
+		AAFFBAEE1E2FD6A2003CF8D8 /* CoreSpotlight.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AAFFBAED1E2FD6A2003CF8D8 /* CoreSpotlight.framework */; };
+		AAFFBAF01E2FD6E5003CF8D8 /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AAFFBAEF1E2FD6E5003CF8D8 /* MobileCoreServices.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		AA3238C81D35393C00747F73 /* ALAirports.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ALAirports.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		AA3238CC1D35393C00747F73 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; path = main.m; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
+		AA3238CE1D35393C00747F73 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; lineEnding = 0; path = AppDelegate.h; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objcpp; };
+		AA3238CF1D35393C00747F73 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; path = AppDelegate.m; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
+		AA3238D51D35393C00747F73 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		AA3238D71D35393C00747F73 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		AA3238DA1D35393C00747F73 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		AA3238DC1D35393C00747F73 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		AA84EFDF1D3540C900F6D8AC /* Airport.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; lineEnding = 0; path = Airport.h; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objcpp; };
+		AA84EFE01D3540C900F6D8AC /* Airport.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; path = Airport.m; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
+		AA84EFE61D354F4300F6D8AC /* AirportDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; lineEnding = 0; name = AirportDetailViewController.h; path = ALAirports/AirportDetailViewController.h; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objcpp; };
+		AA84EFE71D354F4300F6D8AC /* AirportDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; name = AirportDetailViewController.m; path = ALAirports/AirportDetailViewController.m; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
+		AA84EFE91D354F6C00F6D8AC /* AirportsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; lineEnding = 0; path = AirportsViewController.h; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objcpp; };
+		AA84EFEA1D354F6C00F6D8AC /* AirportsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; path = AirportsViewController.m; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
+		AA84EFEC1D35504B00F6D8AC /* AirportController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; lineEnding = 0; path = AirportController.h; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objcpp; };
+		AA84EFED1D35504B00F6D8AC /* AirportController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; path = AirportController.m; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
+		AA84EFEF1D35531700F6D8AC /* airports.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = airports.csv; path = ../../Resources/airports.csv; sourceTree = "<group>"; };
+		AA945AB51D356652009FD43A /* AirportTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; lineEnding = 0; path = AirportTableViewCell.h; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objcpp; };
+		AA945AB61D356652009FD43A /* AirportTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; path = AirportTableViewCell.m; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
+		AAFFBAE81E2FC755003CF8D8 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
+		AAFFBAEA1E2FC842003CF8D8 /* AirportAnnotation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AirportAnnotation.h; path = ALAirports/AirportAnnotation.h; sourceTree = "<group>"; };
+		AAFFBAEB1E2FC842003CF8D8 /* AirportAnnotation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AirportAnnotation.m; path = ALAirports/AirportAnnotation.m; sourceTree = "<group>"; };
+		AAFFBAED1E2FD6A2003CF8D8 /* CoreSpotlight.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreSpotlight.framework; path = System/Library/Frameworks/CoreSpotlight.framework; sourceTree = SDKROOT; };
+		AAFFBAEF1E2FD6E5003CF8D8 /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = System/Library/Frameworks/MobileCoreServices.framework; sourceTree = SDKROOT; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		AA3238C51D35393C00747F73 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AAFFBAF01E2FD6E5003CF8D8 /* MobileCoreServices.framework in Frameworks */,
+				AAFFBAEE1E2FD6A2003CF8D8 /* CoreSpotlight.framework in Frameworks */,
+				AAFFBAE91E2FC755003CF8D8 /* MapKit.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		AA3238BF1D35393C00747F73 = {
+			isa = PBXGroup;
+			children = (
+				AA3238CA1D35393C00747F73 /* ALAirports */,
+				AA3238C91D35393C00747F73 /* Products */,
+				AAFFBAE71E2FC755003CF8D8 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		AA3238C91D35393C00747F73 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				AA3238C81D35393C00747F73 /* ALAirports.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		AA3238CA1D35393C00747F73 /* ALAirports */ = {
+			isa = PBXGroup;
+			children = (
+				AA3238CE1D35393C00747F73 /* AppDelegate.h */,
+				AA3238CF1D35393C00747F73 /* AppDelegate.m */,
+				AA3238D41D35393C00747F73 /* Main.storyboard */,
+				AA84EFE41D354F1600F6D8AC /* Airports */,
+				AA84EFE51D354F2B00F6D8AC /* Airport Detail */,
+				AA84EFE31D354F0700F6D8AC /* Model */,
+				AA84EFE21D354EFB00F6D8AC /* Resources */,
+				AA3238CB1D35393C00747F73 /* Supporting Files */,
+			);
+			path = ALAirports;
+			sourceTree = "<group>";
+		};
+		AA3238CB1D35393C00747F73 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				AA3238CC1D35393C00747F73 /* main.m */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		AA84EFE21D354EFB00F6D8AC /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				AA84EFEF1D35531700F6D8AC /* airports.csv */,
+				AA3238D71D35393C00747F73 /* Assets.xcassets */,
+				AA3238D91D35393C00747F73 /* LaunchScreen.storyboard */,
+				AA3238DC1D35393C00747F73 /* Info.plist */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+		};
+		AA84EFE31D354F0700F6D8AC /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				AA84EFDF1D3540C900F6D8AC /* Airport.h */,
+				AA84EFE01D3540C900F6D8AC /* Airport.m */,
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
+		AA84EFE41D354F1600F6D8AC /* Airports */ = {
+			isa = PBXGroup;
+			children = (
+				AA84EFE91D354F6C00F6D8AC /* AirportsViewController.h */,
+				AA84EFEA1D354F6C00F6D8AC /* AirportsViewController.m */,
+				AA84EFEC1D35504B00F6D8AC /* AirportController.h */,
+				AA84EFED1D35504B00F6D8AC /* AirportController.m */,
+				AA945AB51D356652009FD43A /* AirportTableViewCell.h */,
+				AA945AB61D356652009FD43A /* AirportTableViewCell.m */,
+			);
+			name = Airports;
+			sourceTree = "<group>";
+		};
+		AA84EFE51D354F2B00F6D8AC /* Airport Detail */ = {
+			isa = PBXGroup;
+			children = (
+				AA84EFE61D354F4300F6D8AC /* AirportDetailViewController.h */,
+				AA84EFE71D354F4300F6D8AC /* AirportDetailViewController.m */,
+				AAFFBAEA1E2FC842003CF8D8 /* AirportAnnotation.h */,
+				AAFFBAEB1E2FC842003CF8D8 /* AirportAnnotation.m */,
+			);
+			name = "Airport Detail";
+			path = ..;
+			sourceTree = "<group>";
+		};
+		AAFFBAE71E2FC755003CF8D8 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				AAFFBAEF1E2FD6E5003CF8D8 /* MobileCoreServices.framework */,
+				AAFFBAED1E2FD6A2003CF8D8 /* CoreSpotlight.framework */,
+				AAFFBAE81E2FC755003CF8D8 /* MapKit.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		AA3238C71D35393C00747F73 /* ALAirports */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = AA3238EA1D35393C00747F73 /* Build configuration list for PBXNativeTarget "ALAirports" */;
+			buildPhases = (
+				AA3238C41D35393C00747F73 /* Sources */,
+				AA3238C51D35393C00747F73 /* Frameworks */,
+				AA3238C61D35393C00747F73 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = ALAirports;
+			productName = ALAirports;
+			productReference = AA3238C81D35393C00747F73 /* ALAirports.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		AA3238C01D35393C00747F73 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0800;
+				ORGANIZATIONNAME = "Art and Logic";
+				TargetAttributes = {
+					AA3238C71D35393C00747F73 = {
+						CreatedOnToolsVersion = 8.0;
+						DevelopmentTeam = B3L2CC23ZH;
+						DevelopmentTeamName = "Art & Logic, Inc.";
+						ProvisioningStyle = Automatic;
+					};
+				};
+			};
+			buildConfigurationList = AA3238C31D35393C00747F73 /* Build configuration list for PBXProject "ALAirports" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = AA3238BF1D35393C00747F73;
+			productRefGroup = AA3238C91D35393C00747F73 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				AA3238C71D35393C00747F73 /* ALAirports */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		AA3238C61D35393C00747F73 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AA3238DB1D35393C00747F73 /* LaunchScreen.storyboard in Resources */,
+				AA3238D81D35393C00747F73 /* Assets.xcassets in Resources */,
+				AA84EFF01D35531700F6D8AC /* airports.csv in Resources */,
+				AA3238D61D35393C00747F73 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		AA3238C41D35393C00747F73 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AA84EFEB1D354F6C00F6D8AC /* AirportsViewController.m in Sources */,
+				AAFFBAEC1E2FC842003CF8D8 /* AirportAnnotation.m in Sources */,
+				AA84EFEE1D35504B00F6D8AC /* AirportController.m in Sources */,
+				AA84EFE11D3540C900F6D8AC /* Airport.m in Sources */,
+				AA3238D01D35393C00747F73 /* AppDelegate.m in Sources */,
+				AA945AB71D356652009FD43A /* AirportTableViewCell.m in Sources */,
+				AA84EFE81D354F4300F6D8AC /* AirportDetailViewController.m in Sources */,
+				AA3238CD1D35393C00747F73 /* main.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		AA3238D41D35393C00747F73 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				AA3238D51D35393C00747F73 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		AA3238D91D35393C00747F73 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				AA3238DA1D35393C00747F73 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		AA3238E81D35393C00747F73 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		AA3238E91D35393C00747F73 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		AA3238EB1D35393C00747F73 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = ALAirports/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "Art-and-Logic.ALAirports";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		AA3238EC1D35393C00747F73 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = ALAirports/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "Art-and-Logic.ALAirports";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		AA3238C31D35393C00747F73 /* Build configuration list for PBXProject "ALAirports" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				AA3238E81D35393C00747F73 /* Debug */,
+				AA3238E91D35393C00747F73 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		AA3238EA1D35393C00747F73 /* Build configuration list for PBXNativeTarget "ALAirports" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				AA3238EB1D35393C00747F73 /* Debug */,
+				AA3238EC1D35393C00747F73 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = AA3238C01D35393C00747F73 /* Project object */;
+}
