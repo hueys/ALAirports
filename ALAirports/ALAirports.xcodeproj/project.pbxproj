@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		AA0BFD041E3A7B16004ABEFD /* SearchResultsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AA0BFD031E3A7B16004ABEFD /* SearchResultsViewController.m */; };
 		AA3238CD1D35393C00747F73 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = AA3238CC1D35393C00747F73 /* main.m */; };
 		AA3238D01D35393C00747F73 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = AA3238CF1D35393C00747F73 /* AppDelegate.m */; };
 		AA3238D61D35393C00747F73 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AA3238D41D35393C00747F73 /* Main.storyboard */; };
@@ -25,6 +26,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		AA0BFD021E3A7B16004ABEFD /* SearchResultsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SearchResultsViewController.h; sourceTree = "<group>"; };
+		AA0BFD031E3A7B16004ABEFD /* SearchResultsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SearchResultsViewController.m; sourceTree = "<group>"; };
 		AA3238C81D35393C00747F73 /* ALAirports.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ALAirports.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AA3238CC1D35393C00747F73 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; path = main.m; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
 		AA3238CE1D35393C00747F73 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; lineEnding = 0; path = AppDelegate.h; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objcpp; };
@@ -134,6 +137,8 @@
 				AA84EFED1D35504B00F6D8AC /* AirportController.m */,
 				AA945AB51D356652009FD43A /* AirportTableViewCell.h */,
 				AA945AB61D356652009FD43A /* AirportTableViewCell.m */,
+				AA0BFD021E3A7B16004ABEFD /* SearchResultsViewController.h */,
+				AA0BFD031E3A7B16004ABEFD /* SearchResultsViewController.m */,
 			);
 			name = Airports;
 			sourceTree = "<group>";
@@ -234,6 +239,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AA0BFD041E3A7B16004ABEFD /* SearchResultsViewController.m in Sources */,
 				AA84EFEB1D354F6C00F6D8AC /* AirportsViewController.m in Sources */,
 				AAFFBAEC1E2FC842003CF8D8 /* AirportAnnotation.m in Sources */,
 				AA84EFEE1D35504B00F6D8AC /* AirportController.m in Sources */,
