@@ -7,14 +7,16 @@
 
 #import "AirportController.h"
 
+@import CoreData;
 @import CoreLocation;
 @import CoreSpotlight;
 @import MobileCoreServices;
 @import UIKit;
 
 #import "Airport.h"
+#import "AppDelegate.h"
 
-#define kMaxAirportsToLoad 20
+#define kMaxAirportsToLoad 200
 
 NSString* const kAirportCSVFilename = @"airports.csv";
 
@@ -87,9 +89,23 @@ typedef NS_ENUM(NSUInteger, ImportColumnDefinition) {
 #pragma mark - Internal
 - (void)loadAirportData
 {
+   AppDelegate* appDelegate = (AppDelegate*)[UIApplication sharedApplication].delegate;
+   
+   // Try to load data from the Core Data store
+   if (appDelegate.hasAirportData)
+   {
+      NSFetchRequest* fetchRequest = [NSFetchRequest fetchRequestWithEntityName:@"Airport"];
+      
+      NSArray* airports = [appDelegate.persistentContainer.viewContext executeFetchRequest:fetchRequest
+                                                                                     error:nil];
+      [self.airportData addObjectsFromArray:airports];
+      return;
+   }
+
+   // Otherwise import from the bundled CSV file into Core Data
    NSURL* csvDataURL = [[NSBundle mainBundle] URLForResource:[kAirportCSVFilename stringByDeletingPathExtension]
                                                withExtension:[kAirportCSVFilename pathExtension]];
-   
+
    NSError* error;
    NSString* csvData = [NSString stringWithContentsOfURL:csvDataURL
                                                 encoding:NSUTF8StringEncoding
@@ -98,6 +114,9 @@ typedef NS_ENUM(NSUInteger, ImportColumnDefinition) {
    if (csvData)
    {
       __block NSUInteger index = 0;
+      
+      NSManagedObjectContext* backgroundContext = appDelegate.backgroundContext;
+      
       [csvData enumerateLinesUsingBlock:^(NSString* line, BOOL* stop) {
          if (index != 0)
          {
@@ -107,9 +126,9 @@ typedef NS_ENUM(NSUInteger, ImportColumnDefinition) {
             {
                if ([components[kColumnCountry] isEqualToString:@"\"US\""])
                {
-                  NSUInteger airportIdentifier = (NSUInteger)[components[kColumnId] integerValue];
                   NSMutableDictionary* attributes = [NSMutableDictionary dictionaryWithCapacity:0];
                   
+                  attributes[kAirportAttributeAirportId] = @((NSUInteger)[components[kColumnId] integerValue]);
                   attributes[kAirportAttributeIdentifier] = [self stripQuotes:components[kColumnIdent]];
                   attributes[kAirportAttributeName] = [self stripQuotes:components[kColumnName]];
                   attributes[kAirportAttributeElevation] = @([components[kColumnElevation] integerValue]);
@@ -136,8 +155,10 @@ typedef NS_ENUM(NSUInteger, ImportColumnDefinition) {
                   attributes[kAirportAttributeAirportType] = @([self airportTypeValue:[self stripQuotes:components[kColumnType]]]);
                   
                   // Create the ALAirport instance and add it to the collection of airports
-                  ALAirport* airport = [[ALAirport alloc] initWithID:airportIdentifier
-                                                          attributes:[NSDictionary dictionaryWithDictionary:attributes]];
+                  ALAirport* airport = (ALAirport*)[NSEntityDescription insertNewObjectForEntityForName:@"Airport"
+                                                                                 inManagedObjectContext:backgroundContext];
+                  [airport setAttributes:attributes];
+                  
                   [self.airportData addObject:airport];
                }
             }
@@ -146,6 +167,7 @@ typedef NS_ENUM(NSUInteger, ImportColumnDefinition) {
          index += 1;
          
          *stop = ((index + 1) > kMaxAirportsToLoad);
+         [backgroundContext save:nil];
       }];
    }
    else
