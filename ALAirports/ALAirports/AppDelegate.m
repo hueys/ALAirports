@@ -28,6 +28,14 @@
    }
    
    return self.backgroundContext;
+- (BOOL)hasAirportData
+{
+   NSFetchRequest* fetchRequest = [NSFetchRequest fetchRequestWithEntityName:@"Airport"];
+   
+   NSUInteger count = [self.persistentContainer.viewContext countForFetchRequest:fetchRequest
+                                                                           error:nil];
+   
+   return (count > 0);
 }
 
 #pragma mark - Internal

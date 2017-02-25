@@ -12,5 +12,6 @@
 @property (strong, nonatomic) UIWindow *window;
 @property (nonatomic, readonly) NSPersistentContainer* persistentContainer;
 @property (nonatomic, readonly) NSManagedObjectContext* backgroundContext;
+@property (nonatomic, readonly) BOOL hasAirportData;
 @end
 
