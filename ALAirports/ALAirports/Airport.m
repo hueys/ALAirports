@@ -7,6 +7,7 @@
 
 #import "Airport.h"
 
+NSString* const kAirportAttributeAirportId = @"airportId";
 NSString* const kAirportAttributeIdentifier = @"identifier";
 NSString* const kAirportAttributeAirportType = @"airportType";
 NSString* const kAirportAttributeName = @"name";
@@ -38,28 +39,29 @@ NSString* const kAirportAttributeWikipediaURL = @"wikipediaURL";
 @property (nonatomic, copy) NSString* gpsCode;
 @property (nonatomic, copy) NSString* iataCode;
 @property (nonatomic, copy) NSString* localCode;
-@property (nonatomic, copy) NSURL* homepageURL;
-@property (nonatomic, copy) NSURL* wikipediaURL;
+@property (nonatomic, copy) NSString* homepageURL;
+@property (nonatomic, copy) NSString* wikipediaURL;
 
-- (void)setAttributes:(NSDictionary*)attributes;
 - (NSString*)descriptionOfAirportType;
 - (NSString*)descriptionOfISORegion;
 @end
 
 @implementation ALAirport
-- (instancetype)initWithID:(NSUInteger)airportIdentifier
-                attributes:(NSDictionary*)attributes
-{
-   self = [super init];
-   
-   if (self)
-   {
-      _airportId = airportIdentifier;
-      [self setAttributes:attributes];
-   }
-   
-   return self;
-}
+@dynamic airportId;
+@dynamic identifier;
+@dynamic airportType;
+@dynamic name;
+@dynamic location;
+@dynamic elevation;
+@dynamic isoCountry;
+@dynamic isoRegion;
+@dynamic municipality;
+@dynamic scheduledService;
+@dynamic gpsCode;
+@dynamic iataCode;
+@dynamic localCode;
+@dynamic homepageURL;
+@dynamic wikipediaURL;
 
 #pragma mark - Properties
 - (NSString *)detailedDescription
@@ -95,12 +97,13 @@ NSString* const kAirportAttributeWikipediaURL = @"wikipediaURL";
    return coordinate;
 }
 
-#pragma mark - Internal
+#pragma mark - ALAirport
 - (void)setAttributes:(NSDictionary*)attributes
 {
    [self setValuesForKeysWithDictionary:attributes];
 }
 
+#pragma mark - Internal
 - (NSString*)descriptionOfAirportType
 {
    NSDictionary* descriptions = @{@(kAirportTypeHeliport): @"Heliport",
@@ -117,24 +120,5 @@ NSString* const kAirportAttributeWikipediaURL = @"wikipediaURL";
 - (NSString*)descriptionOfISORegion
 {
    return [self.isoRegion substringFromIndex:3];
-}
-
-#pragma mark - NSObject
-- (NSUInteger)hash
-{
-   return self.airportId;
-}
-
-- (BOOL)isEqual:(id)object
-{
-   BOOL result = NO;
-   
-   if ([object isKindOfClass:[self class]])
-   {
-      ALAirport* otherAirport = (ALAirport*)object;
-      result = (self.airportId == otherAirport.airportId);
-   }
-   
-   return result;
 }
 @end

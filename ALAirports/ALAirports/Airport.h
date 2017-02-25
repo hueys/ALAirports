@@ -7,6 +7,7 @@
 
 #import <Foundation/Foundation.h>
 
+@import CoreData;
 @import CoreLocation;
 
 typedef NS_ENUM(NSUInteger, AirportType) {
@@ -19,6 +20,7 @@ typedef NS_ENUM(NSUInteger, AirportType) {
    kAirportTypeClosed
 };
 
+extern NSString* const kAirportAttributeAirportId;
 extern NSString* const kAirportAttributeIdentifier;
 extern NSString* const kAirportAttributeAirportType;
 extern NSString* const kAirportAttributeName;
@@ -34,14 +36,12 @@ extern NSString* const kAirportAttributeLocalCode;
 extern NSString* const kAirportAttributeHomepageURL;
 extern NSString* const kAirportAttributeWikipediaURL;
 
-@interface ALAirport : NSObject
+@interface ALAirport : NSManagedObject
 @property (nonatomic, readonly) NSString* detailedDescription;
 @property (nonatomic, readonly) NSString* airportName;
 @property (nonatomic, readonly) NSString* airportIdentifier;
 @property (nonatomic, readonly) NSString* type;
 @property (nonatomic, readonly) CLLocationCoordinate2D coordinate;
 
-- (instancetype)initWithID:(NSUInteger)airportIdentifier
-                attributes:(NSDictionary*)attributes;
-
+- (void)setAttributes:(NSDictionary*)attributes;
 @end
