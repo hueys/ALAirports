@@ -12,12 +12,38 @@
 #import "AirportsViewController.h"
 
 @interface AppDelegate ()
+@property (strong, nonatomic, readwrite) NSPersistentContainer* persistentContainer;
+@property (strong, nonatomic, readwrite) NSManagedObjectContext* backgroundContext;
+
+- (void)setupCoreDataStack;
 @end
 
 @implementation AppDelegate
-- (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
+#pragma mark - Properties
+- (NSManagedObjectContext*)backgroundContext
 {
-   return YES;
+   if (!self.backgroundContext)
+   {
+      self.backgroundContext = [self.persistentContainer newBackgroundContext];
+   }
+   
+   return self.backgroundContext;
+}
+
+#pragma mark - Internal
+- (void)setupCoreDataStack
+{
+   static dispatch_once_t onceToken;
+   
+   dispatch_once(&onceToken, ^{
+      self.persistentContainer = [NSPersistentContainer persistentContainerWithName:@"AirportsModel"];
+   });
+}
+
+#pragma mark - UIApplicationDelegate
+- (void)applicationDidFinishLaunching:(UIApplication *)application
+{
+   [self setupCoreDataStack];
 }
 
 - (BOOL)application:(UIApplication *)application continueUserActivity:(NSUserActivity *)userActivity restorationHandler:(void (^)(NSArray * _Nullable))restorationHandler
