@@ -13,6 +13,8 @@
 		AA3238D61D35393C00747F73 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AA3238D41D35393C00747F73 /* Main.storyboard */; };
 		AA3238D81D35393C00747F73 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AA3238D71D35393C00747F73 /* Assets.xcassets */; };
 		AA3238DB1D35393C00747F73 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AA3238D91D35393C00747F73 /* LaunchScreen.storyboard */; };
+		AA3E329F1E621DDA00BC0489 /* AirportsModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = AA3E329D1E621DDA00BC0489 /* AirportsModel.xcdatamodeld */; };
+		AA3E32A11E621E0000BC0489 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AA3E32A01E621E0000BC0489 /* CoreData.framework */; };
 		AA84EFE11D3540C900F6D8AC /* Airport.m in Sources */ = {isa = PBXBuildFile; fileRef = AA84EFE01D3540C900F6D8AC /* Airport.m */; };
 		AA84EFE81D354F4300F6D8AC /* AirportDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AA84EFE71D354F4300F6D8AC /* AirportDetailViewController.m */; };
 		AA84EFEB1D354F6C00F6D8AC /* AirportsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AA84EFEA1D354F6C00F6D8AC /* AirportsViewController.m */; };
@@ -36,6 +38,8 @@
 		AA3238D71D35393C00747F73 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		AA3238DA1D35393C00747F73 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		AA3238DC1D35393C00747F73 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		AA3E329E1E621DDA00BC0489 /* AirportsModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = AirportsModel.xcdatamodel; sourceTree = "<group>"; };
+		AA3E32A01E621E0000BC0489 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
 		AA84EFDF1D3540C900F6D8AC /* Airport.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; lineEnding = 0; path = Airport.h; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objcpp; };
 		AA84EFE01D3540C900F6D8AC /* Airport.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; path = Airport.m; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
 		AA84EFE61D354F4300F6D8AC /* AirportDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; lineEnding = 0; name = AirportDetailViewController.h; path = ALAirports/AirportDetailViewController.h; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objcpp; };
@@ -59,6 +63,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AA3E32A11E621E0000BC0489 /* CoreData.framework in Frameworks */,
 				AAFFBAF01E2FD6E5003CF8D8 /* MobileCoreServices.framework in Frameworks */,
 				AAFFBAEE1E2FD6A2003CF8D8 /* CoreSpotlight.framework in Frameworks */,
 				AAFFBAE91E2FC755003CF8D8 /* MapKit.framework in Frameworks */,
@@ -91,6 +96,7 @@
 				AA3238CE1D35393C00747F73 /* AppDelegate.h */,
 				AA3238CF1D35393C00747F73 /* AppDelegate.m */,
 				AA3238D41D35393C00747F73 /* Main.storyboard */,
+				AA3E329D1E621DDA00BC0489 /* AirportsModel.xcdatamodeld */,
 				AA84EFE41D354F1600F6D8AC /* Airports */,
 				AA84EFE51D354F2B00F6D8AC /* Airport Detail */,
 				AA84EFE31D354F0700F6D8AC /* Model */,
@@ -158,6 +164,7 @@
 		AAFFBAE71E2FC755003CF8D8 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				AA3E32A01E621E0000BC0489 /* CoreData.framework */,
 				AAFFBAEF1E2FD6E5003CF8D8 /* MobileCoreServices.framework */,
 				AAFFBAED1E2FD6A2003CF8D8 /* CoreSpotlight.framework */,
 				AAFFBAE81E2FC755003CF8D8 /* MapKit.framework */,
@@ -248,6 +255,7 @@
 				AA945AB71D356652009FD43A /* AirportTableViewCell.m in Sources */,
 				AA84EFE81D354F4300F6D8AC /* AirportDetailViewController.m in Sources */,
 				AA3238CD1D35393C00747F73 /* main.m in Sources */,
+				AA3E329F1E621DDA00BC0489 /* AirportsModel.xcdatamodeld in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -401,6 +409,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		AA3E329D1E621DDA00BC0489 /* AirportsModel.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				AA3E329E1E621DDA00BC0489 /* AirportsModel.xcdatamodel */,
+			);
+			currentVersion = AA3E329E1E621DDA00BC0489 /* AirportsModel.xcdatamodel */;
+			path = AirportsModel.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = AA3238C01D35393C00747F73 /* Project object */;
 }
