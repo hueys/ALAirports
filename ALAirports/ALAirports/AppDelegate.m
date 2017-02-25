@@ -22,12 +22,14 @@
 #pragma mark - Properties
 - (NSManagedObjectContext*)backgroundContext
 {
-   if (!self.backgroundContext)
+   if (!_backgroundContext)
    {
-      self.backgroundContext = [self.persistentContainer newBackgroundContext];
+      _backgroundContext = [self.persistentContainer newBackgroundContext];
    }
    
-   return self.backgroundContext;
+   return _backgroundContext;
+}
+
 - (BOOL)hasAirportData
 {
    NSFetchRequest* fetchRequest = [NSFetchRequest fetchRequestWithEntityName:@"Airport"];
