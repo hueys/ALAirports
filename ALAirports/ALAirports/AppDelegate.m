@@ -47,6 +47,9 @@
    
    dispatch_once(&onceToken, ^{
       self.persistentContainer = [NSPersistentContainer persistentContainerWithName:@"AirportsModel"];
+      [self.persistentContainer loadPersistentStoresWithCompletionHandler:^(NSPersistentStoreDescription* description, NSError* error) {
+         NSLog(@"%@ %@", description, error);
+      }];
    });
 }
 
