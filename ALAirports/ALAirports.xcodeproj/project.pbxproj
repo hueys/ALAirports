@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		70A10784E14147DD956923C3 /* Pods_ALAirports.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FED56B4D62672CA55BF118CC /* Pods_ALAirports.framework */; };
 		AA0BFD041E3A7B16004ABEFD /* SearchResultsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AA0BFD031E3A7B16004ABEFD /* SearchResultsViewController.m */; };
+		AA1A4EB11E84113A00F7FAC1 /* API.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA1A4EB01E84113A00F7FAC1 /* API.swift */; };
+		AA1A4EB41E84116200F7FAC1 /* allAirports.graphql in Resources */ = {isa = PBXBuildFile; fileRef = AA1A4EB31E84116200F7FAC1 /* allAirports.graphql */; };
 		AA3238CD1D35393C00747F73 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = AA3238CC1D35393C00747F73 /* main.m */; };
 		AA3238D01D35393C00747F73 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = AA3238CF1D35393C00747F73 /* AppDelegate.m */; };
 		AA3238D61D35393C00747F73 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AA3238D41D35393C00747F73 /* Main.storyboard */; };
@@ -33,6 +35,9 @@
 		710B9B692E997B205C81267C /* Pods-ALAirports.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ALAirports.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ALAirports/Pods-ALAirports.debug.xcconfig"; sourceTree = "<group>"; };
 		AA0BFD021E3A7B16004ABEFD /* SearchResultsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SearchResultsViewController.h; sourceTree = "<group>"; };
 		AA0BFD031E3A7B16004ABEFD /* SearchResultsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SearchResultsViewController.m; sourceTree = "<group>"; };
+		AA1A4EAC1E840D3000F7FAC1 /* ALAirports-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "ALAirports-Bridging-Header.h"; sourceTree = "<group>"; };
+		AA1A4EB01E84113A00F7FAC1 /* API.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = API.swift; sourceTree = "<group>"; };
+		AA1A4EB31E84116200F7FAC1 /* allAirports.graphql */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = allAirports.graphql; sourceTree = "<group>"; };
 		AA3238C81D35393C00747F73 /* ALAirports.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ALAirports.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AA3238CC1D35393C00747F73 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; path = main.m; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
 		AA3238CE1D35393C00747F73 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; lineEnding = 0; path = AppDelegate.h; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objcpp; };
@@ -87,6 +92,15 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
+		AA1A4EB21E84114000F7FAC1 /* Apollo */ = {
+			isa = PBXGroup;
+			children = (
+				AA1A4EB31E84116200F7FAC1 /* allAirports.graphql */,
+				AA1A4EB01E84113A00F7FAC1 /* API.swift */,
+			);
+			name = Apollo;
+			sourceTree = "<group>";
+		};
 		AA3238BF1D35393C00747F73 = {
 			isa = PBXGroup;
 			children = (
@@ -108,6 +122,7 @@
 		AA3238CA1D35393C00747F73 /* ALAirports */ = {
 			isa = PBXGroup;
 			children = (
+				AA1A4EB21E84114000F7FAC1 /* Apollo */,
 				AA3238CE1D35393C00747F73 /* AppDelegate.h */,
 				AA3238CF1D35393C00747F73 /* AppDelegate.m */,
 				AA3238D41D35393C00747F73 /* Main.storyboard */,
@@ -117,6 +132,7 @@
 				AA84EFE31D354F0700F6D8AC /* Model */,
 				AA84EFE21D354EFB00F6D8AC /* Resources */,
 				AA3238CB1D35393C00747F73 /* Supporting Files */,
+				AA1A4EAC1E840D3000F7FAC1 /* ALAirports-Bridging-Header.h */,
 			);
 			path = ALAirports;
 			sourceTree = "<group>";
@@ -196,6 +212,7 @@
 			buildConfigurationList = AA3238EA1D35393C00747F73 /* Build configuration list for PBXNativeTarget "ALAirports" */;
 			buildPhases = (
 				27F1DB9B0F94CE3EE80E8D6B /* [CP] Check Pods Manifest.lock */,
+				AA1A4EAF1E8410E800F7FAC1 /* Apollo codegen */,
 				AA3238C41D35393C00747F73 /* Sources */,
 				AA3238C51D35393C00747F73 /* Frameworks */,
 				AA3238C61D35393C00747F73 /* Resources */,
@@ -217,13 +234,14 @@
 		AA3238C01D35393C00747F73 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0800;
+				LastUpgradeCheck = 0820;
 				ORGANIZATIONNAME = "Art and Logic";
 				TargetAttributes = {
 					AA3238C71D35393C00747F73 = {
 						CreatedOnToolsVersion = 8.0;
 						DevelopmentTeam = B3L2CC23ZH;
 						DevelopmentTeamName = "Art & Logic, Inc.";
+						LastSwiftMigration = 0820;
 						ProvisioningStyle = Automatic;
 					};
 				};
@@ -251,6 +269,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AA1A4EB41E84116200F7FAC1 /* allAirports.graphql in Resources */,
 				AA3238DB1D35393C00747F73 /* LaunchScreen.storyboard in Resources */,
 				AA3238D81D35393C00747F73 /* Assets.xcassets in Resources */,
 				AA84EFF01D35531700F6D8AC /* airports.csv in Resources */,
@@ -291,6 +310,20 @@
 			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
+		AA1A4EAF1E8410E800F7FAC1 /* Apollo codegen */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Apollo codegen";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "APOLLO_FRAMEWORK_PATH=\"$(eval find $FRAMEWORK_SEARCH_PATHS -name \"Apollo.framework\" -maxdepth 1)\"\n\nif [ -z \"$APOLLO_FRAMEWORK_PATH\" ]; then\necho \"error: Couldn't find Apollo.framework in FRAMEWORK_SEARCH_PATHS; make sure to add the framework to your project.\"\nexit 1\nfi\n\ncd \"${SRCROOT}/${TARGET_NAME}\"\n$APOLLO_FRAMEWORK_PATH/check-and-run-apollo-codegen.sh generate $(find . -name '*.graphql') --schema schema.json --output API.swift";
+		};
 		FF7CE3EA69A689B3D9C894AA /* [CP] Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -322,6 +355,7 @@
 				AA945AB71D356652009FD43A /* AirportTableViewCell.m in Sources */,
 				AA84EFE81D354F4300F6D8AC /* AirportDetailViewController.m in Sources */,
 				AA3238CD1D35393C00747F73 /* main.m in Sources */,
+				AA1A4EB11E84113A00F7FAC1 /* API.swift in Sources */,
 				AA3E329F1E621DDA00BC0489 /* AirportsModel.xcdatamodeld in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -363,8 +397,10 @@
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
@@ -408,8 +444,10 @@
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
@@ -428,6 +466,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
 				VALIDATE_PRODUCT = YES;
 			};
 			name = Release;
@@ -436,11 +475,16 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 710B9B692E997B205C81267C /* Pods-ALAirports.debug.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				INFOPLIST_FILE = ALAirports/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "Art-and-Logic.ALAirports";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "ALAirports/ALAirports-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
 		};
@@ -448,11 +492,15 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 00EEFF52C99EE31F3263C5CA /* Pods-ALAirports.release.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				INFOPLIST_FILE = ALAirports/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "Art-and-Logic.ALAirports";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "ALAirports/ALAirports-Bridging-Header.h";
+				SWIFT_VERSION = 3.0;
 			};
 			name = Release;
 		};
