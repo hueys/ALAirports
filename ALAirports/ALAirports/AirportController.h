@@ -15,5 +15,8 @@ typedef void(^AirportControllerImportCompletionHandler)();
 
 + (instancetype)defaultController;
 
+- (void)loadAirportData;
+- (void)indexAirportData;
+   
 - (ALAirport*)airportWithIdentifier:(NSString*)identifier;
 @end

@@ -1,7 +1,20 @@
 query AllAirports {
-  allAirports {
-    name,
-    identifier,
-    elevation
-  }
+   allAirports {
+      airportId,
+      identifier,
+      airportType,
+      name,
+      elevation,
+      isoCountry,
+      isoRegion,
+      municipality,
+      gpsCode,
+      iataCode,
+      localCode,
+      homepageURL,
+      wikipediaURL,
+      scheduledService,
+      latitude,
+      longitude
+   }
 }

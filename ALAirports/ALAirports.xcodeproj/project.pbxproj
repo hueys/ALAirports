@@ -11,6 +11,7 @@
 		AA0BFD041E3A7B16004ABEFD /* SearchResultsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AA0BFD031E3A7B16004ABEFD /* SearchResultsViewController.m */; };
 		AA1A4EB11E84113A00F7FAC1 /* API.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA1A4EB01E84113A00F7FAC1 /* API.swift */; };
 		AA1A4EB41E84116200F7FAC1 /* allAirports.graphql in Resources */ = {isa = PBXBuildFile; fileRef = AA1A4EB31E84116200F7FAC1 /* allAirports.graphql */; };
+		AA1A4EB61E84141600F7FAC1 /* AirportFetcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA1A4EB51E84141600F7FAC1 /* AirportFetcher.swift */; };
 		AA3238CD1D35393C00747F73 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = AA3238CC1D35393C00747F73 /* main.m */; };
 		AA3238D01D35393C00747F73 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = AA3238CF1D35393C00747F73 /* AppDelegate.m */; };
 		AA3238D61D35393C00747F73 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AA3238D41D35393C00747F73 /* Main.storyboard */; };
@@ -22,7 +23,6 @@
 		AA84EFE81D354F4300F6D8AC /* AirportDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AA84EFE71D354F4300F6D8AC /* AirportDetailViewController.m */; };
 		AA84EFEB1D354F6C00F6D8AC /* AirportsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AA84EFEA1D354F6C00F6D8AC /* AirportsViewController.m */; };
 		AA84EFEE1D35504B00F6D8AC /* AirportController.m in Sources */ = {isa = PBXBuildFile; fileRef = AA84EFED1D35504B00F6D8AC /* AirportController.m */; };
-		AA84EFF01D35531700F6D8AC /* airports.csv in Resources */ = {isa = PBXBuildFile; fileRef = AA84EFEF1D35531700F6D8AC /* airports.csv */; };
 		AA945AB71D356652009FD43A /* AirportTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = AA945AB61D356652009FD43A /* AirportTableViewCell.m */; };
 		AAFFBAE91E2FC755003CF8D8 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AAFFBAE81E2FC755003CF8D8 /* MapKit.framework */; };
 		AAFFBAEC1E2FC842003CF8D8 /* AirportAnnotation.m in Sources */ = {isa = PBXBuildFile; fileRef = AAFFBAEB1E2FC842003CF8D8 /* AirportAnnotation.m */; };
@@ -38,6 +38,7 @@
 		AA1A4EAC1E840D3000F7FAC1 /* ALAirports-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "ALAirports-Bridging-Header.h"; sourceTree = "<group>"; };
 		AA1A4EB01E84113A00F7FAC1 /* API.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = API.swift; sourceTree = "<group>"; };
 		AA1A4EB31E84116200F7FAC1 /* allAirports.graphql */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = allAirports.graphql; sourceTree = "<group>"; };
+		AA1A4EB51E84141600F7FAC1 /* AirportFetcher.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AirportFetcher.swift; sourceTree = "<group>"; };
 		AA3238C81D35393C00747F73 /* ALAirports.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ALAirports.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AA3238CC1D35393C00747F73 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; path = main.m; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
 		AA3238CE1D35393C00747F73 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; lineEnding = 0; path = AppDelegate.h; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objcpp; };
@@ -56,7 +57,6 @@
 		AA84EFEA1D354F6C00F6D8AC /* AirportsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; path = AirportsViewController.m; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
 		AA84EFEC1D35504B00F6D8AC /* AirportController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; lineEnding = 0; path = AirportController.h; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objcpp; };
 		AA84EFED1D35504B00F6D8AC /* AirportController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; path = AirportController.m; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
-		AA84EFEF1D35531700F6D8AC /* airports.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = airports.csv; path = ../../Resources/airports.csv; sourceTree = "<group>"; };
 		AA945AB51D356652009FD43A /* AirportTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; lineEnding = 0; path = AirportTableViewCell.h; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objcpp; };
 		AA945AB61D356652009FD43A /* AirportTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; path = AirportTableViewCell.m; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
 		AAFFBAE81E2FC755003CF8D8 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
@@ -148,7 +148,6 @@
 		AA84EFE21D354EFB00F6D8AC /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				AA84EFEF1D35531700F6D8AC /* airports.csv */,
 				AA3238D71D35393C00747F73 /* Assets.xcassets */,
 				AA3238D91D35393C00747F73 /* LaunchScreen.storyboard */,
 				AA3238DC1D35393C00747F73 /* Info.plist */,
@@ -176,6 +175,7 @@
 				AA945AB61D356652009FD43A /* AirportTableViewCell.m */,
 				AA0BFD021E3A7B16004ABEFD /* SearchResultsViewController.h */,
 				AA0BFD031E3A7B16004ABEFD /* SearchResultsViewController.m */,
+				AA1A4EB51E84141600F7FAC1 /* AirportFetcher.swift */,
 			);
 			name = Airports;
 			sourceTree = "<group>";
@@ -272,7 +272,6 @@
 				AA1A4EB41E84116200F7FAC1 /* allAirports.graphql in Resources */,
 				AA3238DB1D35393C00747F73 /* LaunchScreen.storyboard in Resources */,
 				AA3238D81D35393C00747F73 /* Assets.xcassets in Resources */,
-				AA84EFF01D35531700F6D8AC /* airports.csv in Resources */,
 				AA3238D61D35393C00747F73 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -351,6 +350,7 @@
 				AAFFBAEC1E2FC842003CF8D8 /* AirportAnnotation.m in Sources */,
 				AA84EFEE1D35504B00F6D8AC /* AirportController.m in Sources */,
 				AA84EFE11D3540C900F6D8AC /* Airport.m in Sources */,
+				AA1A4EB61E84141600F7FAC1 /* AirportFetcher.swift in Sources */,
 				AA3238D01D35393C00747F73 /* AppDelegate.m in Sources */,
 				AA945AB71D356652009FD43A /* AirportTableViewCell.m in Sources */,
 				AA84EFE81D354F4300F6D8AC /* AirportDetailViewController.m in Sources */,
@@ -478,6 +478,7 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
+				DEFINES_MODULE = YES;
 				INFOPLIST_FILE = ALAirports/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "Art-and-Logic.ALAirports";
@@ -495,6 +496,7 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
+				DEFINES_MODULE = YES;
 				INFOPLIST_FILE = ALAirports/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "Art-and-Logic.ALAirports";

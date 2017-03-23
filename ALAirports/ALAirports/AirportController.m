@@ -13,6 +13,8 @@
 @import MobileCoreServices;
 @import UIKit;
 
+#import "ALAirports-Swift.h"
+
 #import "Airport.h"
 #import "AppDelegate.h"
 
@@ -44,6 +46,7 @@ typedef NS_ENUM(NSUInteger, ImportColumnDefinition) {
 
 @interface ALAirportController ()
 @property (nonatomic) NSMutableArray* airportData;
+@property (nonatomic) AirportFetcher* fetcher;
 
 - (void)loadAirportData;
 - (void)indexAirportData;
@@ -69,13 +72,67 @@ typedef NS_ENUM(NSUInteger, ImportColumnDefinition) {
 #pragma mark - Properties
 - (NSArray *)airports
 {
-   if (0 == [self.airportData count])
-   {
-      [self loadAirportData];
-      [self indexAirportData];
-   }
-   
    return [NSArray arrayWithArray:self.airportData];
+}
+   
+#pragma mark - Notifications
+- (void)didFetchAllAirports:(NSNotification*)note
+{
+   dispatch_async(dispatch_get_main_queue(), ^{
+      NSArray* airports = [note object];
+      
+      NSMutableArray* allAirports = [NSMutableArray arrayWithCapacity:[airports count]];
+      
+      for (NSDictionary* dict in airports)
+      {
+         ALAirport* airport = [[ALAirport alloc] init];
+         
+         [airport setValue:@([dict[@"airportId"] integerValue])
+                    forKey:kAirportAttributeAirportId];
+         [airport setValue:dict[@"identifer"]
+                    forKey:kAirportAttributeIdentifier];
+         [airport setValue:@([self airportTypeValue:dict[@"airport_type"]])
+                    forKey:kAirportAttributeAirportType];
+         [airport setValue:dict[@"name"]
+                    forKey:kAirportAttributeName];
+         [airport setValue:@"FIXME"
+                    forKey:kAirportAttributeLocation];
+         [airport setValue:@([dict[@"elevation"] integerValue])
+                    forKey:kAirportAttributeElevation];
+         [airport setValue:dict[@"isoCountry"]
+                    forKey:kAirportAttributeISOCountry];
+         [airport setValue:dict[@"isoRegion"]
+                    forKey:kAirportAttributeISORegion];
+         [airport setValue:dict[@"municipality"]
+                    forKey:kAirportAttributeMunicipality];
+         [airport setValue:@([dict[@"scheduledService"] isEqualToString:@"true"])
+                    forKey:kAirportAttributeScheduledService];
+         [airport setValue:dict[@"gpsCode"]
+                    forKey:kAirportAttributeGPSCode];
+         [airport setValue:dict[@"iataCode"]
+                    forKey:kAirportAttributeIATACode];
+         [airport setValue:dict[@"localCode"]
+                    forKey:kAirportAttributeLocalCode];
+         [airport setValue:dict[@"homepageUrl"]
+                    forKey:kAirportAttributeHomepageURL];
+         [airport setValue:dict[@"wikipediaUrl"]
+                    forKey:kAirportAttributeWikipediaURL];
+         
+         CLLocation* location = [[CLLocation alloc] initWithLatitude:[dict[@"latitude"] doubleValue]
+                                                           longitude:[dict[@"longitude"] doubleValue]];
+         
+         if (location)
+         {
+            airport.location = location;
+         }
+         
+         [allAirports addObject:airport];
+      }
+      
+      [self.airportData addObjectsFromArray:allAirports];
+      [[NSNotificationCenter defaultCenter] postNotificationName:@"ShouldReloadAirports"
+                                                          object:nil];
+   });
 }
 
 #pragma mark - ALAirportController
@@ -86,94 +143,19 @@ typedef NS_ENUM(NSUInteger, ImportColumnDefinition) {
    return [self.airports filteredArrayUsingPredicate:predicate].firstObject;
 }
 
-#pragma mark - Internal
 - (void)loadAirportData
 {
-   AppDelegate* appDelegate = (AppDelegate*)[UIApplication sharedApplication].delegate;
+   if (!self.fetcher)
+   {
+      self.fetcher = [[AirportFetcher alloc] init];
+      
+      [[NSNotificationCenter defaultCenter] addObserver:self
+                                               selector:@selector(didFetchAllAirports:)
+                                                   name:@"DidFetchAllAirports"
+                                                 object:nil];
+   }
    
-   // Try to load data from the Core Data store
-   if (appDelegate.hasAirportData)
-   {
-      NSFetchRequest* fetchRequest = [NSFetchRequest fetchRequestWithEntityName:@"Airport"];
-      
-      NSArray* airports = [appDelegate.persistentContainer.viewContext executeFetchRequest:fetchRequest
-                                                                                     error:nil];
-      [self.airportData addObjectsFromArray:airports];
-      return;
-   }
-
-   // Otherwise import from the bundled CSV file into Core Data
-   NSURL* csvDataURL = [[NSBundle mainBundle] URLForResource:[kAirportCSVFilename stringByDeletingPathExtension]
-                                               withExtension:[kAirportCSVFilename pathExtension]];
-
-   NSError* error;
-   NSString* csvData = [NSString stringWithContentsOfURL:csvDataURL
-                                                encoding:NSUTF8StringEncoding
-                                                   error:&error];
-   
-   if (csvData)
-   {
-      __block NSUInteger index = 0;
-      
-      NSManagedObjectContext* backgroundContext = appDelegate.backgroundContext;
-      
-      [csvData enumerateLinesUsingBlock:^(NSString* line, BOOL* stop) {
-         if (index != 0)
-         {
-            NSArray* components = [line componentsSeparatedByString:@","];
-            
-            if (kExpectedNumberOfColumns == [components count])
-            {
-               if ([components[kColumnCountry] isEqualToString:@"\"US\""])
-               {
-                  NSMutableDictionary* attributes = [NSMutableDictionary dictionaryWithCapacity:0];
-                  
-                  attributes[kAirportAttributeAirportId] = @((NSUInteger)[components[kColumnId] integerValue]);
-                  attributes[kAirportAttributeIdentifier] = [self stripQuotes:components[kColumnIdent]];
-                  attributes[kAirportAttributeName] = [self stripQuotes:components[kColumnName]];
-                  attributes[kAirportAttributeElevation] = @([components[kColumnElevation] integerValue]);
-                  attributes[kAirportAttributeISOCountry] = [self stripQuotes:components[kColumnCountry]];
-                  attributes[kAirportAttributeISORegion] = [self stripQuotes:components[kColumnRegion]];
-                  attributes[kAirportAttributeMunicipality] = [self stripQuotes:components[kColumnMunicipality]];
-                  attributes[kAirportAttributeGPSCode] = [self stripQuotes:components[kColumnGPSCode]];
-                  attributes[kAirportAttributeIATACode] = [self stripQuotes:components[kColumnIATACode]];
-                  attributes[kAirportAttributeLocalCode] = [self stripQuotes:components[kColumnLocalCode]];
-                  attributes[kAirportAttributeHomepageURL] = [self stripQuotes:components[kColumnHomeLink]];
-                  attributes[kAirportAttributeWikipediaURL] = [self stripQuotes:components[kColumnWikipediaLink]];
-                  attributes[kAirportAttributeScheduledService] = @([components[kColumnScheduledService] isEqualToString:@"yes"]);
-                  
-                  // Location
-                  CLLocation* location = [[CLLocation alloc] initWithLatitude:[components[kColumnLatitude] doubleValue]
-                                                                    longitude:[components[kColumnLongitude] doubleValue]];
-                  
-                  if (location)
-                  {
-                     attributes[kAirportAttributeLocation] = location;
-                  }
-                  
-                  // Airport Type
-                  attributes[kAirportAttributeAirportType] = @([self airportTypeValue:[self stripQuotes:components[kColumnType]]]);
-                  
-                  // Create the ALAirport instance and add it to the collection of airports
-                  ALAirport* airport = (ALAirport*)[NSEntityDescription insertNewObjectForEntityForName:@"Airport"
-                                                                                 inManagedObjectContext:backgroundContext];
-                  [airport setAttributes:attributes];
-                  
-                  [self.airportData addObject:airport];
-               }
-            }
-         }
-         
-         index += 1;
-         
-         *stop = ((index + 1) > kMaxAirportsToLoad);
-         [backgroundContext save:nil];
-      }];
-   }
-   else
-   {
-      NSLog(@"Error loading CSV data: %@", [error localizedDescription]);
-   }
+   [self.fetcher allAirports];
 }
 
 - (void)indexAirportData
@@ -201,7 +183,13 @@ typedef NS_ENUM(NSUInteger, ImportColumnDefinition) {
       }
    });
 }
+   
+- (void)dealloc
+{
+   [[NSNotificationCenter defaultCenter] removeObserver:self];
+}
 
+#pragma mark - Internal
 - (NSString*)stripQuotes:(NSString*)quotedString
 {
    NSUInteger length = [quotedString length];

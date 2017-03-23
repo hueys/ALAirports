@@ -36,9 +36,22 @@
    [super viewDidLoad];
 
    [self setupSearchController];
+   
+   [[NSNotificationCenter defaultCenter] addObserver:self
+                                            selector:@selector(shouldReloadAirports:)
+                                                name:@"ShouldReloadAirports"
+                                              object:nil];
+   
    self.airportController = [ALAirportController defaultController];
+   [self.airportController loadAirportData];
 }
 
+#pragma mark - Notififcations
+- (void)shouldReloadAirports:(NSNotification*)note
+{
+   [self.tableView reloadData];
+}
+   
 #pragma mark - ALAirportsViewController
 - (void)selectAirportWithIdentifier:(NSString*)identifier
 {
