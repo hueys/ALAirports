@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		70A10784E14147DD956923C3 /* Pods_ALAirports.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FED56B4D62672CA55BF118CC /* Pods_ALAirports.framework */; };
 		AA0BFD041E3A7B16004ABEFD /* SearchResultsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AA0BFD031E3A7B16004ABEFD /* SearchResultsViewController.m */; };
 		AA3238CD1D35393C00747F73 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = AA3238CC1D35393C00747F73 /* main.m */; };
 		AA3238D01D35393C00747F73 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = AA3238CF1D35393C00747F73 /* AppDelegate.m */; };
@@ -28,6 +29,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		00EEFF52C99EE31F3263C5CA /* Pods-ALAirports.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ALAirports.release.xcconfig"; path = "Pods/Target Support Files/Pods-ALAirports/Pods-ALAirports.release.xcconfig"; sourceTree = "<group>"; };
+		710B9B692E997B205C81267C /* Pods-ALAirports.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ALAirports.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ALAirports/Pods-ALAirports.debug.xcconfig"; sourceTree = "<group>"; };
 		AA0BFD021E3A7B16004ABEFD /* SearchResultsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SearchResultsViewController.h; sourceTree = "<group>"; };
 		AA0BFD031E3A7B16004ABEFD /* SearchResultsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SearchResultsViewController.m; sourceTree = "<group>"; };
 		AA3238C81D35393C00747F73 /* ALAirports.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ALAirports.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -56,6 +59,7 @@
 		AAFFBAEB1E2FC842003CF8D8 /* AirportAnnotation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AirportAnnotation.m; path = ALAirports/AirportAnnotation.m; sourceTree = "<group>"; };
 		AAFFBAED1E2FD6A2003CF8D8 /* CoreSpotlight.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreSpotlight.framework; path = System/Library/Frameworks/CoreSpotlight.framework; sourceTree = SDKROOT; };
 		AAFFBAEF1E2FD6E5003CF8D8 /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = System/Library/Frameworks/MobileCoreServices.framework; sourceTree = SDKROOT; };
+		FED56B4D62672CA55BF118CC /* Pods_ALAirports.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ALAirports.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -67,18 +71,29 @@
 				AAFFBAF01E2FD6E5003CF8D8 /* MobileCoreServices.framework in Frameworks */,
 				AAFFBAEE1E2FD6A2003CF8D8 /* CoreSpotlight.framework in Frameworks */,
 				AAFFBAE91E2FC755003CF8D8 /* MapKit.framework in Frameworks */,
+				70A10784E14147DD956923C3 /* Pods_ALAirports.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		7EF669E81F493FDA39196671 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				710B9B692E997B205C81267C /* Pods-ALAirports.debug.xcconfig */,
+				00EEFF52C99EE31F3263C5CA /* Pods-ALAirports.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		AA3238BF1D35393C00747F73 = {
 			isa = PBXGroup;
 			children = (
 				AA3238CA1D35393C00747F73 /* ALAirports */,
 				AA3238C91D35393C00747F73 /* Products */,
 				AAFFBAE71E2FC755003CF8D8 /* Frameworks */,
+				7EF669E81F493FDA39196671 /* Pods */,
 			);
 			sourceTree = "<group>";
 		};
@@ -168,6 +183,7 @@
 				AAFFBAEF1E2FD6E5003CF8D8 /* MobileCoreServices.framework */,
 				AAFFBAED1E2FD6A2003CF8D8 /* CoreSpotlight.framework */,
 				AAFFBAE81E2FC755003CF8D8 /* MapKit.framework */,
+				FED56B4D62672CA55BF118CC /* Pods_ALAirports.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -179,9 +195,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = AA3238EA1D35393C00747F73 /* Build configuration list for PBXNativeTarget "ALAirports" */;
 			buildPhases = (
+				27F1DB9B0F94CE3EE80E8D6B /* [CP] Check Pods Manifest.lock */,
 				AA3238C41D35393C00747F73 /* Sources */,
 				AA3238C51D35393C00747F73 /* Frameworks */,
 				AA3238C61D35393C00747F73 /* Resources */,
+				1AFAC57B43D4C3CCCC1534D9 /* [CP] Embed Pods Frameworks */,
+				FF7CE3EA69A689B3D9C894AA /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -240,6 +259,54 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		1AFAC57B43D4C3CCCC1534D9 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-ALAirports/Pods-ALAirports-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		27F1DB9B0F94CE3EE80E8D6B /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		FF7CE3EA69A689B3D9C894AA /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-ALAirports/Pods-ALAirports-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		AA3238C41D35393C00747F73 /* Sources */ = {
@@ -367,6 +434,7 @@
 		};
 		AA3238EB1D35393C00747F73 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 710B9B692E997B205C81267C /* Pods-ALAirports.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = ALAirports/Info.plist;
@@ -378,6 +446,7 @@
 		};
 		AA3238EC1D35393C00747F73 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 00EEFF52C99EE31F3263C5CA /* Pods-ALAirports.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = ALAirports/Info.plist;
