@@ -8,7 +8,6 @@
 #import "AirportController.h"
 
 @import CoreData;
-@import CoreLocation;
 @import CoreSpotlight;
 @import MobileCoreServices;
 @import UIKit;
